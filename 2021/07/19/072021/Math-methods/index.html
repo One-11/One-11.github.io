@@ -1,0 +1,580 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="未 名 空 境" href="https://www.ones.zone/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="未 名 空 境" href="https://www.ones.zone/atom.xml" />
+<link rel="alternate" type="application/json" title="未 名 空 境" href="https://www.ones.zone/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="Js" />
+
+
+<link rel="canonical" href="https://www.ones.zone/2021/07/19/072021/Math-methods/">
+
+
+
+  <title>
+Math 的常用方法 - Js |
+</title>
+<meta name="generator" content="Hexo 6.1.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">Math 的常用方法
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2021-07-19 16:44:32">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-07-19T16:44:32+08:00">2021-07-19</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>1.7k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>2 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">One's Zone</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://pic.imgdb.cn/item/6234dccc5baa1a80abf533c0.png"></li>
+          <li class="item" data-background-image="https://pic.imgdb.cn/item/6234dcf45baa1a80abf55927.png"></li>
+          <li class="item" data-background-image="https://pic.imgdb.cn/item/6234dcc15baa1a80abf5298f.png"></li>
+          <li class="item" data-background-image="https://pic.imgdb.cn/item/6234dccc5baa1a80abf5339a.png"></li>
+          <li class="item" data-background-image="https://pic.imgdb.cn/item/623583cd5baa1a80abe86bfd.png"></li>
+          <li class="item" data-background-image="https://pic.imgdb.cn/item/6234dc945baa1a80abf502f4.png"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/Js/" itemprop="item" rel="index" title="分类于 Js"><span itemprop="name">Js</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://www.ones.zone/2021/07/19/072021/Math-methods/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="MiiCo">
+    <meta itemprop="description" content=" - - - 行 至 水 穷 处， 坐 看 云 起 时 - - - , ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="未 名 空 境">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h2 id="abs-绝对值"><a class="anchor" href="#abs-绝对值">#</a> abs () 绝对值</h2>
+<figure class="highlight raw"><figcaption data-lang=""></figcaption><table><tr><td data-num="1"></td><td><pre>Math.abs(10.01);    &#x2F;&#x2F; 10.01</pre></td></tr><tr><td data-num="2"></td><td><pre>Math.abs(-10.01);   &#x2F;&#x2F; 10.01</pre></td></tr><tr><td data-num="3"></td><td><pre>Math.abs(&#39;-1&#39;);     &#x2F;&#x2F; 1</pre></td></tr><tr><td data-num="4"></td><td><pre>Math.abs(-2);       &#x2F;&#x2F; 2</pre></td></tr><tr><td data-num="5"></td><td><pre>Math.abs(null);     &#x2F;&#x2F; 0</pre></td></tr><tr><td data-num="6"></td><td><pre>Math.abs(&#39;&#39;);       &#x2F;&#x2F; 0</pre></td></tr><tr><td data-num="7"></td><td><pre>Math.abs([]);       &#x2F;&#x2F; 0</pre></td></tr><tr><td data-num="8"></td><td><pre>Math.abs([2]);      &#x2F;&#x2F; 2</pre></td></tr><tr><td data-num="9"></td><td><pre>Math.abs([1,2]);    &#x2F;&#x2F; NaN</pre></td></tr><tr><td data-num="10"></td><td><pre>Math.abs(&#123;&#125;);       &#x2F;&#x2F; NaN</pre></td></tr><tr><td data-num="11"></td><td><pre>Math.abs(&#39;string&#39;); &#x2F;&#x2F; NaN</pre></td></tr><tr><td data-num="12"></td><td><pre>Math.abs();         &#x2F;&#x2F; NaN</pre></td></tr></table></figure><h2 id="ceil-向上取整"><a class="anchor" href="#ceil-向上取整">#</a> ceil () 向上取整</h2>
+<figure class="highlight raw"><figcaption data-lang=""></figcaption><table><tr><td data-num="1"></td><td><pre>Math.ceil(10.01);   &#x2F;&#x2F; 11</pre></td></tr><tr><td data-num="2"></td><td><pre>Math.ceil(-10.01);  &#x2F;&#x2F; -10</pre></td></tr><tr><td data-num="3"></td><td><pre>Math.ceil(.91);    &#x2F;&#x2F; 1</pre></td></tr><tr><td data-num="4"></td><td><pre>Math.ceil(-0.99);  &#x2F;&#x2F; -0</pre></td></tr></table></figure><h2 id="floor-向下取整"><a class="anchor" href="#floor-向下取整">#</a> floor () 向下取整</h2>
+<figure class="highlight raw"><figcaption data-lang=""></figcaption><table><tr><td data-num="1"></td><td><pre>Math.floor(10.99);   &#x2F;&#x2F; 10</pre></td></tr><tr><td data-num="2"></td><td><pre>Math.floor(-10.99);  &#x2F;&#x2F; -11</pre></td></tr></table></figure><h2 id="round-4-舍-5-入"><a class="anchor" href="#round-4-舍-5-入">#</a> round () 4 舍 5 入</h2>
+<figure class="highlight raw"><figcaption data-lang=""></figcaption><table><tr><td data-num="1"></td><td><pre>Math.round(7.5);   &#x2F;&#x2F; 8</pre></td></tr><tr><td data-num="2"></td><td><pre>Math.round(-7.5);  &#x2F;&#x2F; -7</pre></td></tr><tr><td data-num="3"></td><td><pre>Math.round(-7.51); &#x2F;&#x2F; -8</pre></td></tr><tr><td data-num="4"></td><td><pre>Math.round(-7.6);  &#x2F;&#x2F; -8</pre></td></tr></table></figure><div class="note info">
+<p>如果参数的小数部分大于 0.5，那么参数被舍入到具有下一个更高绝对值的整数。<br />
+如果小于 0.5，则将参数四舍五入为绝对值较小的整数。<br />
+如果小数部分恰好为 0.5，则参数在 +∞ 方向上四舍五入到下一个整数。<br />
+👉这与许多语言的 round () 函数不同，它们通常将这种情况变为远离零的下一个整数，而不是在负数的情况下给出不同的结果，小数部分恰好为 0.5。</p>
+</div>
+<h2 id="random-获取-0~1-之间的随机小数"><a class="anchor" href="#random-获取-0~1-之间的随机小数">#</a> random () 获取 0~1 之间的随机小数</h2>
+<figure class="highlight raw"><figcaption data-lang=""></figcaption><table><tr><td data-num="1"></td><td><pre>Math.random ();          &#x2F;&#x2F; 得到一个大于等于 0，小于 1 之间的随机数</pre></td></tr><tr><td data-num="2"></td><td><pre>Math.random ()*(m-n)+n;  &#x2F;&#x2F; 得到 n~m 之间的随机整数</pre></td></tr></table></figure><h2 id="sqrt-开平方"><a class="anchor" href="#sqrt-开平方">#</a> sqrt () 开平方</h2>
+<figure class="highlight raw"><figcaption data-lang=""></figcaption><table><tr><td data-num="1"></td><td><pre>Math.sqrt(100); &#x2F;&#x2F; 10</pre></td></tr><tr><td data-num="2"></td><td><pre>Math.sqrt(2);   &#x2F;&#x2F; 1.414213562373095</pre></td></tr><tr><td data-num="3"></td><td><pre>Math.sqrt(0);   &#x2F;&#x2F; 0</pre></td></tr><tr><td data-num="4"></td><td><pre>Math.sqrt(-1);  &#x2F;&#x2F; NaN</pre></td></tr></table></figure><h2 id="pow-取幂n-的-m-次方"><a class="anchor" href="#pow-取幂n-的-m-次方">#</a> pow () 取幂 (N 的 M 次方)</h2>
+<figure class="highlight raw"><figcaption data-lang=""></figcaption><table><tr><td data-num="1"></td><td><pre>Math.pow(2, 10);   &#x2F;&#x2F; 1024</pre></td></tr></table></figure><h2 id="min-最小值"><a class="anchor" href="#min-最小值">#</a> min () 最小值</h2>
+<figure class="highlight raw"><figcaption data-lang=""></figcaption><table><tr><td data-num="1"></td><td><pre>Math.min(1, 2);   &#x2F;&#x2F; 10</pre></td></tr><tr><td data-num="2"></td><td><pre>Math.min(-1, -2); &#x2F;&#x2F; -20</pre></td></tr><tr><td data-num="3"></td><td><pre>Math.min(-1, 2);  &#x2F;&#x2F; -10</pre></td></tr></table></figure><h2 id="max-最大值"><a class="anchor" href="#max-最大值">#</a> max () 最大值</h2>
+<figure class="highlight raw"><figcaption data-lang=""></figcaption><table><tr><td data-num="1"></td><td><pre>Math.max(1, 2);   &#x2F;&#x2F;  2</pre></td></tr><tr><td data-num="2"></td><td><pre>Math.max(-1, -2); &#x2F;&#x2F; -1</pre></td></tr><tr><td data-num="3"></td><td><pre>Math.max(-1, 2);  &#x2F;&#x2F;  2</pre></td></tr></table></figure><h2 id="3-个实现数组的最大值最小值比较的方法"><a class="anchor" href="#3-个实现数组的最大值最小值比较的方法">#</a> 3 个实现数组的最大值 / 最小值比较的方法：</h2>
+<h3 id="spread-operator实现"><a class="anchor" href="#spread-operator实现">#</a> ...(spread operator) 实现</h3>
+<figure class="highlight raw"><figcaption data-lang=""></figcaption><table><tr><td data-num="1"></td><td><pre>let arr &#x3D; [1, 2, 3];</pre></td></tr><tr><td data-num="2"></td><td><pre>let value &#x3D; Math.max(...arr);</pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre>&#x2F;&#x2F; 3</pre></td></tr></table></figure><h3 id="arrayreduce"><a class="anchor" href="#arrayreduce">#</a> Array.reduce()</h3>
+<figure class="highlight raw"><figcaption data-lang=""></figcaption><table><tr><td data-num="1"></td><td><pre>let arr &#x3D; [1, 2, 3];</pre></td></tr><tr><td data-num="2"></td><td><pre>let value &#x3D; arr.reduce(function(a, b) &#123;</pre></td></tr><tr><td data-num="3"></td><td><pre>    return Math.max(a, b);</pre></td></tr><tr><td data-num="4"></td><td><pre>&#125;);</pre></td></tr><tr><td data-num="5"></td><td><pre></pre></td></tr><tr><td data-num="6"></td><td><pre>&#x2F;&#x2F; 3</pre></td></tr></table></figure><h3 id="使用-apply"><a class="anchor" href="#使用-apply">#</a> 使用 apply ()</h3>
+<figure class="highlight raw"><figcaption data-lang=""></figcaption><table><tr><td data-num="1"></td><td><pre>let arr &#x3D; [1, 2, 3];</pre></td></tr><tr><td data-num="2"></td><td><pre>let value &#x3D; Math.max.apply(null, numArray);</pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre>&#x2F;&#x2F; 3</pre></td></tr></table></figure>
+      <div class="tags">
+          <a href="/tags/Js/" rel="tag"><i class="ic i-tag"></i> Js</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-12-16 16:27:42" itemprop="dateModified" datetime="2022-12-16T16:27:42+08:00">2022-12-16</time>
+  </span>
+  <span id="2021/07/19/072021/Math-methods/" class="item leancloud_visitors" data-flag-title="Math 的常用方法" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 喝茶去~</button>
+  <p>[ 春色如期满桃园，怎舍折花换酒钱 ]</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="MiiCo 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="MiiCo 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>MiiCo <i class="ic i-at"><em>@</em></i>未 名 空 境
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://www.ones.zone/2021/07/19/072021/Math-methods/" title="Math 的常用方法">https://www.ones.zone/2021/07/19/072021/Math-methods/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2021/07/15/07152021-build_blog/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;pic.imgdb.cn&#x2F;item&#x2F;6234dc785baa1a80abf4e76f.png" title="在自己的服务器上搭建Hexo个人博客教程">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 博客</span>
+  <h3>在自己的服务器上搭建Hexo个人博客教程</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2022/03/13/summary/sum-202203/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;pic.imgdb.cn&#x2F;item&#x2F;623583cd5baa1a80abe86bdc.png" title="周结-三月篇">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 五日一省</span>
+  <h3>周结-三月篇</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#abs-%E7%BB%9D%E5%AF%B9%E5%80%BC"><span class="toc-number">1.</span> <span class="toc-text"> abs () 绝对值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ceil-%E5%90%91%E4%B8%8A%E5%8F%96%E6%95%B4"><span class="toc-number">2.</span> <span class="toc-text"> ceil () 向上取整</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#floor-%E5%90%91%E4%B8%8B%E5%8F%96%E6%95%B4"><span class="toc-number">3.</span> <span class="toc-text"> floor () 向下取整</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#round-4-%E8%88%8D-5-%E5%85%A5"><span class="toc-number">4.</span> <span class="toc-text"> round () 4 舍 5 入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#random-%E8%8E%B7%E5%8F%96-0~1-%E4%B9%8B%E9%97%B4%E7%9A%84%E9%9A%8F%E6%9C%BA%E5%B0%8F%E6%95%B0"><span class="toc-number">5.</span> <span class="toc-text"> random () 获取 0~1 之间的随机小数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sqrt-%E5%BC%80%E5%B9%B3%E6%96%B9"><span class="toc-number">6.</span> <span class="toc-text"> sqrt () 开平方</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pow-%E5%8F%96%E5%B9%82n-%E7%9A%84-m-%E6%AC%A1%E6%96%B9"><span class="toc-number">7.</span> <span class="toc-text"> pow () 取幂 (N 的 M 次方)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#min-%E6%9C%80%E5%B0%8F%E5%80%BC"><span class="toc-number">8.</span> <span class="toc-text"> min () 最小值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#max-%E6%9C%80%E5%A4%A7%E5%80%BC"><span class="toc-number">9.</span> <span class="toc-text"> max () 最大值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%B8%AA%E5%AE%9E%E7%8E%B0%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC%E6%9C%80%E5%B0%8F%E5%80%BC%E6%AF%94%E8%BE%83%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">10.</span> <span class="toc-text"> 3 个实现数组的最大值 &#x2F; 最小值比较的方法：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#spread-operator%E5%AE%9E%E7%8E%B0"><span class="toc-number">10.1.</span> <span class="toc-text"> ...(spread operator) 实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#arrayreduce"><span class="toc-number">10.2.</span> <span class="toc-text"> Array.reduce()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-apply"><span class="toc-number">10.3.</span> <span class="toc-text"> 使用 apply ()</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li class="active"><a href="/2021/07/19/072021/Math-methods/" rel="bookmark" title="Math的常用方法">Math的常用方法</a></li><li><a href="/2022/03/16/event-loop/" rel="bookmark" title="浏览器事件循环机制(Event Loop)">浏览器事件循环机制(Event Loop)</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="MiiCo"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">MiiCo</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">8</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">4</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">10</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>萌友</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-magic"></i>花匣子</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/links/link/" rel="section"><i class="ic i-magic"></i>宝藏网站</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/links/quick/" rel="section"><i class="ic i-note"></i>速查笔记</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2021/07/15/07152021-build_blog/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2022/03/13/summary/sum-202203/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%8D%9A%E5%AE%A2/" title="分类于 博客">博客</a>
+</div>
+
+    <span><a href="/2021/07/15/07152021-build_blog/" title="在自己的服务器上搭建Hexo个人博客教程">在自己的服务器上搭建Hexo个人博客教程</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Js/" title="分类于 Js">Js</a>
+</div>
+
+    <span><a href="/2022/03/16/event-loop/" title="浏览器事件循环机制(Event Loop)">浏览器事件循环机制(Event Loop)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E4%BA%94%E6%97%A5%E4%B8%80%E7%9C%81/" title="分类于 五日一省">五日一省</a>
+</div>
+
+    <span><a href="/2022/04/03/summary/sum-202204/" title="周结-四月篇">周结-四月篇</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2022/03/25/quiz/js01/" title="前端面试题 - Js篇">前端面试题 - Js篇</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E4%BA%94%E6%97%A5%E4%B8%80%E7%9C%81/" title="分类于 五日一省">五日一省</a>
+</div>
+
+    <span><a href="/2022/03/13/summary/sum-202203/" title="周结-三月篇">周结-三月篇</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Js/" title="分类于 Js">Js</a>
+</div>
+
+    <span><a href="/2021/07/19/072021/Math-methods/" title="Math的常用方法">Math的常用方法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%AA%81%E5%8F%91%E8%80%8C%E8%87%B3%E7%9A%84%E5%B0%8F%E6%8A%80%E5%B7%A7/" title="分类于 突发而至的小技巧">突发而至的小技巧</a>
+</div>
+
+    <span><a href="/2022/03/19/excel-batch-modify-name/" title="批量修改图片名称 - Win10">批量修改图片名称 - Win10</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2022/03/25/quiz/react01/" title="前端面试题 - React篇">前端面试题 - React篇</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2021 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">MiiCo @ One's Zone</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">6k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">6 分钟</span>
+  </div>
+
+  <div class="beian">
+      <span class="text-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9iZWlhbi5taWl0Lmdvdi5jbg==">黔ICP备2022001678号</span>
+      </span>
+      <span class="text-item">
+        <img class="beian-img" data-src="/img/beian_qian.png">
+        <span class="exturl" data-url="aHR0cHM6Ly9iZWlhbi5taWl0Lmdvdi5jbg==">贵公网安备 52032502000096号</span>
+      </span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2021/07/19/072021/Math-methods/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
